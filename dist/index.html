@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular App</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div
+      class="container mt-5"
+      ng-app="myList"
+      ng-controller="myListController"
+    >
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <h1 class="mb-4 text-primary text-center">API Data</h1>
+          <table class="table table-striped table-hover table-bordered">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Avatar</th>
+                <th>more</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="pro in products">
+                <td >{{pro.id}}</td>
+                <td>{{pro.email}}</td>
+                <td>{{pro.first_name}}</td>
+                <td>{{pro.last_name}}</td>
+                <td>
+                  <img
+                    ng-src="{{pro.avatar}}"
+                    class="img-fluid rounded-circle"
+                    alt="Avatar"
+                    style="width: 50px; height: 50px"
+                  />
+                  <td><button class="btn btn-primary" ng-click="showUserDetails(pro.id)">click</button></td>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        
+
+        </div>
+      </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
